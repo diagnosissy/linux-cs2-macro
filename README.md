@@ -5,7 +5,7 @@ This cheat is impossible to be detected by VAC (UNLESS YOU SET THE INTERVALS TO 
 THE CODE
 
 
-#!/usr/bin/env python3
+!/usr/bin/env python3
 import evdev
 from evdev import uinput, ecodes as e
 import threading
@@ -13,20 +13,20 @@ import time
 import random
 import sys
 
-# -------------------- Config --------------------
+ -------------------- Config --------------------
 
-# YOU CAN CHANGE THESE VARIABLES TO YOUR LIKING!
+ YOU CAN CHANGE THESE VARIABLES TO YOUR LIKING!
 
 MIN_INTERVAL = 0.05
 MAX_INTERVAL = 0.25
 
-# -------------Interval Value Warning-------------
+ -------------Interval Value Warning-------------
 
 if MIN_INTERVAL == MAX_INTERVAL:
     print("Do NOT set the intervals the same value.")
     sys.exit(1)
 
-# -----------------Mouse Search-------------------
+ -----------------Mouse Search-------------------
 
 def find_mouse():
     for path in evdev.list_devices():
@@ -46,7 +46,7 @@ print(f"Running...")
 
 real_mouse.grab()
 
-# -----------------Virtual Mouse-----------------
+ -----------------Virtual Mouse-----------------
 virtual = uinput.UInput({
     e.EV_KEY: [e.BTN_LEFT, e.BTN_RIGHT, e.BTN_MIDDLE],
     e.EV_REL: [e.REL_X, e.REL_Y, e.REL_WHEEL],
@@ -84,7 +84,7 @@ try:
             virtual.write(event.type, event.code, event.value)
             virtual.syn()
 
-# -------------------Exit-----------------------
+ -------------------Exit-----------------------
 
 except KeyboardInterrupt:
     print("\nCtrl+C Input Detected! Exiting...")
