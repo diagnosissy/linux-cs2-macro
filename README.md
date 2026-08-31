@@ -17,8 +17,8 @@ import sys
 
  YOU CAN CHANGE THESE VARIABLES TO YOUR LIKING!
 
-MIN_INTERVAL = 0.05
-MAX_INTERVAL = 0.25
+MIN_INTERVAL = 0.15
+MAX_INTERVAL = 0.35
 
  -------------Interval Value Warning-------------
 
