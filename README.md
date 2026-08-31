@@ -47,6 +47,7 @@ print(f"Running...")
 real_mouse.grab()
 
  -----------------Virtual Mouse-----------------
+ 
 virtual = uinput.UInput({
     e.EV_KEY: [e.BTN_LEFT, e.BTN_RIGHT, e.BTN_MIDDLE],
     e.EV_REL: [e.REL_X, e.REL_Y, e.REL_WHEEL],
