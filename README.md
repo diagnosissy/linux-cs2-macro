@@ -3,7 +3,28 @@ CS2 Macro for Linux made in Python 3
 This cheat is impossible to be detected by VAC (UNLESS YOU SET THE INTERVALS TO THE SAME VALUE which the code wont let you do.)
 Press Ctrl + C to exit
 
-THE CODE
+REQUIREMENTS:
+-python3
+-evdev (pip install evdev)
+-gcc (sudo {default software management system of your distro} install gcc)
+
+VERIFY REQUIRED SOFTWARE:
+# Check Python version
+python3 --version
+
+# Check if evdev is installed
+python3 -c "import evdev; print('evdev installed')"
+
+# Check for input devices
+ls -la /dev/input/event*
+
+# Check if uinput exists
+ls -la /dev/uinput
+
+# Check group membership
+groups $USER  # Should show 'input' and 'uinput'
+
+### THE CODE
 
 !/usr/bin/env python3
 import evdev
@@ -13,20 +34,20 @@ import time
 import random
 import sys
 
- -------------------- Config --------------------
+### -------------------- Config --------------------
 
  YOU CAN CHANGE THESE VARIABLES TO YOUR LIKING!
 
 MIN_INTERVAL = 0.15
 MAX_INTERVAL = 0.35
 
- -------------Interval Value Warning-------------
+### -------------Interval Value Warning-------------
 
 if MIN_INTERVAL == MAX_INTERVAL:
     print("Do NOT set the intervals the same value.")
     sys.exit(1)
 
- -----------------Mouse Search-------------------
+### -----------------Mouse Search-------------------
 
 def find_mouse():
     for path in evdev.list_devices():
@@ -46,7 +67,7 @@ print(f"Running...")
 
 real_mouse.grab()
 
- -----------------Virtual Mouse-----------------
+### -----------------Virtual Mouse-----------------
  
 virtual = uinput.UInput({
     e.EV_KEY: [e.BTN_LEFT, e.BTN_RIGHT, e.BTN_MIDDLE],
@@ -85,7 +106,7 @@ try:
             virtual.write(event.type, event.code, event.value)
             virtual.syn()
 
- -------------------Exit-----------------------
+### -------------------Exit-----------------------
 
 except KeyboardInterrupt:
     print("\nCtrl+C Input Detected! Exiting...")
