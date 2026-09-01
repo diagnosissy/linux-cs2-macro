@@ -29,18 +29,26 @@ groups $USER  # Should show 'input' and 'uinput'
 ### THE CODE
 
 !/usr/bin/env python3
+
 import evdev
+
 from evdev import uinput, ecodes as e
+
 import threading
+
 import time
+
 import random
+
 import sys
+
 
 ### -------------------- Config --------------------
 
  YOU CAN CHANGE THESE VARIABLES TO YOUR LIKING!
 
 MIN_INTERVAL = 0.15
+
 MAX_INTERVAL = 0.35
 
 ### -------------Interval Value Warning-------------
