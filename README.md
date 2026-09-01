@@ -29,7 +29,7 @@ Press Ctrl + C to exit
 
 +Check group membership
 
-    groups $USER  # Should show 'input' and 'uinput'
+    groups $USER  (Should show 'input' and 'uinput')
 
 ### THE CODE (FOR VISUAL PURPOSES ONLY, THE REAL CODE IS IN THE RELEASE PAGE!!!)
 
