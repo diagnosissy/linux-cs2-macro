@@ -5,7 +5,9 @@ Press Ctrl + C to exit
 
 #### REQUIREMENTS:
 -python3
+
 -evdev (pip install evdev)
+
 -gcc (sudo {default software management system of your distro} install gcc)
 
 #### VERIFY REQUIRED SOFTWARE:
