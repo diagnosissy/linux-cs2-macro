@@ -3,25 +3,25 @@ CS2 Macro for Linux made in Python 3
 This cheat is impossible to be detected by VAC (UNLESS YOU SET THE INTERVALS TO THE SAME VALUE which the code wont let you do.)
 Press Ctrl + C to exit
 
-REQUIREMENTS:
+#### REQUIREMENTS:
 -python3
 -evdev (pip install evdev)
 -gcc (sudo {default software management system of your distro} install gcc)
 
-VERIFY REQUIRED SOFTWARE:
-# Check Python version
+#### VERIFY REQUIRED SOFTWARE:
+ Check Python version
 python3 --version
 
-# Check if evdev is installed
+ Check if evdev is installed
 python3 -c "import evdev; print('evdev installed')"
 
-# Check for input devices
+ Check for input devices
 ls -la /dev/input/event*
 
-# Check if uinput exists
+ Check if uinput exists
 ls -la /dev/uinput
 
-# Check group membership
+ Check group membership
 groups $USER  # Should show 'input' and 'uinput'
 
 ### THE CODE
