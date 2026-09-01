@@ -9,19 +9,19 @@ Press Ctrl + C to exit
 -gcc (sudo {default software management system of your distro} install gcc)
 
 #### VERIFY REQUIRED SOFTWARE:
- Check Python version
++Check Python version
 python3 --version
 
- Check if evdev is installed
++Check if evdev is installed
 python3 -c "import evdev; print('evdev installed')"
 
- Check for input devices
++Check for input devices
 ls -la /dev/input/event*
 
- Check if uinput exists
++Check if uinput exists
 ls -la /dev/uinput
 
- Check group membership
++Check group membership
 groups $USER  # Should show 'input' and 'uinput'
 
 ### THE CODE
