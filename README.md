@@ -12,19 +12,24 @@ Press Ctrl + C to exit
 
 #### VERIFY REQUIRED SOFTWARE:
 +Check Python version
-python3 --version
+
+    python3 --version
 
 +Check if evdev is installed
-python3 -c "import evdev; print('evdev installed')"
+
+    python3 -c "import evdev; print('evdev installed')"
 
 +Check for input devices
-ls -la /dev/input/event*
+
+    ls -la /dev/input/event*
 
 +Check if uinput exists
-ls -la /dev/uinput
+
+    ls -la /dev/uinput
 
 +Check group membership
-groups $USER  # Should show 'input' and 'uinput'
+
+    groups $USER  # Should show 'input' and 'uinput'
 
 ### THE CODE (FOR VISUAL PURPOSES ONLY, THE REAL CODE IS IN THE RELEASE PAGE!!!)
 
