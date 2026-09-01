@@ -1,9 +1,9 @@
 # linux-cs2-macro
 CS2 Macro for Linux made in Python 3
 This cheat is impossible to be detected by VAC (UNLESS YOU SET THE INTERVALS TO THE SAME VALUE which the code wont let you do.)
+Press Ctrl + C to exit
 
 THE CODE
-
 
 !/usr/bin/env python3
 import evdev
