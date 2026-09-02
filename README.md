@@ -2,13 +2,44 @@
 CS2 Macro for Linux made in Python 3
 This cheat is impossible to be detected by VAC (UNLESS YOU SET THE INTERVALS TO THE SAME VALUE which the code wont let you do.)
 Press Ctrl + C to exit
+This script uses the `evdev` interface to capture and handle input events for macro operations. 
 
-#### REQUIREMENTS:
--python3
+Because this script interacts directly with the Linux kernel's input subsystem (`/dev/input/`), it must be executed with **root/sudo** privileges.
 
--evdev (pip install evdev {if it doesn't work try evdev-binary})
+## Prerequisites
 
--gcc (sudo {default software management system of your distro} install gcc)
+Before installing the Python dependencies, your Linux system requires specific build tools, C compilers, and kernel development headers to successfully compile the `evdev` C-extensions.
+
+### System Packages
+
+Install the required tools (`gcc`, Python development headers, and kernel headers) using your system's package manager:
+
+#### Debian / Ubuntu / Raspberry Pi OS
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-dev build-essential linux-headers-\$(uname -r)
+```
+
+#### Fedora / RHEL / CentOS
+```bash
+sudo dnf install python3 python3-pip python3-devel gcc kernel-devel
+```
+
+### Python Dependencies
+
+Once the system prerequisites are installed, you can build and install the `evdev` package. Since the script must run as root, install the package globally using `sudo`:
+
+```bash
+sudo pip3 install evdev
+```
+
+## Usage
+
+Run the macro script with `sudo` so it has permission to read the kernel input devices:
+
+```bash
+sudo python3 counter-macro.py
+```
 
 #### VERIFY REQUIRED SOFTWARE:
 +Check Python version
